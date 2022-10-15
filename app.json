@@ -3,6 +3,7 @@
     "name": "smart-home-project-frontend",
     "slug": "smart-home-project-frontend",
     "version": "1.0.0",
+    "owner": "gallbotond",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -14,9 +15,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
