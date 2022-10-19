@@ -1,6 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  TextInput,
+  ScrollView,
+  FlatList,
+} from "react-native";
 
 export default function App() {
   const [sensors, setSensors] = useState([]);
@@ -31,14 +39,17 @@ export default function App() {
             title="Add Sensor"
           />
         </View>
-        <View style={styles.list}>
-          <Text style={styles.text}>Your Sensors:</Text>
-          {sensors.map((sensor, i) => (
-            <Text style={styles.listItem} key={i}>
-              {sensor}
-            </Text>
-          ))}
-        </View>
+        <Text style={styles.text}>Your Sensors:</Text>
+        <FlatList
+          data={sensors}
+          renderItem={(sensor) => (
+            <View style={styles.list}>
+              <Text style={styles.listItem} key={sensor.index}>
+                {sensor.item}
+              </Text>
+            </View>
+          )}
+        />
       </View>
     </View>
   );
@@ -88,5 +99,7 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 10,
     borderRadius: 10,
+    borderColor: "lightgreen",
+    borderWidth: 2,
   },
 });
