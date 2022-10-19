@@ -21,6 +21,7 @@ export default function App() {
 
   const sensorAddHandler = () => {
     setSensors((currentSensors) => [...currentSensors, input]);
+    setInput("");
   };
 
   return (
